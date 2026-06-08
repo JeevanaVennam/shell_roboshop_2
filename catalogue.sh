@@ -19,7 +19,7 @@ dnf install mongodb-mongosh -y &>>$script_file
 
 validate $? "installation of mongo client"
 
-status=$(mongosh --host mongodb.jeev.shop --eval 'db.getMongo().getDBNames().indexof("catalogue")')
+status=$(mongosh --host mongodb.jeev.shop --eval 'db.getMongo().getDBNames().indexOf("catalogue")')
 
 if [ $status -lt 0 ]
 then 
