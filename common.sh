@@ -6,18 +6,18 @@ y="\e[33m"
 n="\e[0m"
 
 log_folder="/var/log/roboshop_logs"
-script_name=(echo $0 |cut -d "." f1)
+script_name=$(echo $0 | cut -d "." -f1)
 log_file=$log_folder/$script_name.log
 script_dir=$(pwd)
 
-check root()
+check_root()
 {
 
 if [ $user_id -eq 0 ]
 then
-echo -e "$g you are in root access $n" |&>>$script_file
+echo -e "$g you are in root access $n" &>>$script_file
 else
-echo -e "$r Please try using root access $n" | &>>$script_file
+echo -e "$r Please try using root access $n" &>>$script_file
 exit 1
 fi
 }
