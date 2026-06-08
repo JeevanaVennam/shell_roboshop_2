@@ -7,7 +7,7 @@ check_root
 cp $script_dir/mongo.repo /etc/yum.repos.d/mongo.repo &>>$script_file
 validate $? "copying mongo.repo file"
 
-dnf install mongod -org -y &>>$script_file
+dnf install mongodb-org -y &>>$script_file
 validate $? "mongo db installation"
 
 systemctl enable mongod &>>$script_file
