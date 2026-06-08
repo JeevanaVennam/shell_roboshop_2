@@ -117,7 +117,7 @@ validate $? "copying payment service"
 systemd_setup()
 {
 
-cp script_dir/$app_name.service /etc/system/system/$app_name.service
+cp $script_dir/$app_name.service /etc/system/system/$app_name.service
 validate $? "copying $app_name service files"
 
 systemctl daemon-reload &>>$script_file
