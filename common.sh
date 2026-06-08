@@ -9,7 +9,7 @@ log_folder="/var/log/roboshop_logs"
 script_name=$(echo $0 | cut -d "." -f1)
 script_file=$log_folder/$script_name.log
 script_dir=$(pwd)
-
+mkdir -p $log_folder
 check_root()
 {
 
