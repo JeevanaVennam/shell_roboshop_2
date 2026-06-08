@@ -72,7 +72,7 @@ validate $? "unzipping $app_name content"
 nodejs_setup()
 {
 
-dnf module disable nodejs &>>$script_file
+dnf module disable nodejs -y &>>$script_file
 validate $? "disabling nodejs:20"
 dnf module enable nodejs:20 -y &>>$script_file
 validate $? "enabling nodejs:20"
