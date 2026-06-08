@@ -7,7 +7,7 @@ n="\e[0m"
 
 log_folder="/var/log/roboshop_logs"
 script_name=$(echo $0 | cut -d "." -f1)
-log_file=$log_folder/$script_name.log
+script_file=$log_folder/$script_name.log
 script_dir=$(pwd)
 
 check_root()
