@@ -45,14 +45,17 @@ else
 	echo "roboshop user already exist"
 fi
 
-mkdir /app
+cd /app
+if [ $? -ne 0 ]
+then
+	mkdir /app
+		validate $? "application directory creation"
+fi
 validate $? "application directory creation"
 
 curl -o /tmp/$app_name.zip https://roboshop-artifacts.s3.amazonaws.com/$app_name-v3.zip &>>$script_file
 validate $? "downloading $app_name content"
 
-cd /app
-validate $? "changing to app directory"
 
 rm -rf *
 validate $? "removing previous content from app directory"
