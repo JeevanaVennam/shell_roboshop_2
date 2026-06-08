@@ -14,8 +14,8 @@ systemd_setup
 
 
 cp $script_dir/mongo.repo /etc/yum.repos.d/mongo.repo
-
-dnf install mongodb-mongosh-org -y &>>$script_file
+validate $? "copying mongo.repo file"
+dnf install mongodb-mongosh -y &>>$script_file
 
 validate $? "installation of mongo client"
 
