@@ -54,11 +54,11 @@ validate $? "downloading $app_name content"
 cd /app
 validate $? "changing to app directory"
 
-rm -rf*
+rm -rf *
 validate $? "removing previous content from app directory"
 
 
-unzip /tmp/app_name.zip &>>$script_file
+unzip /tmp/$app_name.zip &>>$script_file
 validate $? "unzipping $app_name content"
 
 }
