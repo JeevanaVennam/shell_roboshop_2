@@ -21,4 +21,4 @@ validate $? "allowing remote connection to mongodb"
 
 systemctl restart mongod &>>$script_file
 
-echo -e "$g Mongodb installed successfully and script execution completed $n" &>>$script_file
+echo -e "$g Mongodb installed successfully and script execution completed $n" | tee -a $script_file
